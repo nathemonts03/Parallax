@@ -1,4 +1,6 @@
-# Linden Lane Weddings: The Journey
+# Parallax Wedding Website
+
+Developed by EM Capital.
 
 A static, single-file website for a wedding organizer offering planning, photography, video, and same-day edit (SDE) films. No build step, no dependencies, no backend.
 
@@ -28,7 +30,8 @@ Open `linden-lane-journey.html` in any modern browser. To publish it, upload the
 ## Customize
 
 ### Brand and contact
-- Replace `Linden Lane` in the `<title>`, the nav logo, and the footer.
+- The browser tab title is `Parallax Wedding Website` (the `<title>` tag). Replace `Linden Lane` in the nav logo and the footer with the client's brand.
+- The footer credit "Developed by EM Capital" is in the `<footer>` element.
 - Replace `hello@lindenlane.example` in the footer and in the form handler near the bottom of the script (the `mailto:` line).
 - The form has no server. It opens the visitor's email app. To collect submissions without email, change the form to post to a form service such as Formspree or Netlify Forms.
 
