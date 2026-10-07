@@ -10,12 +10,12 @@ The hero is a scroll-driven parallax scene with a subject: a bride and groom sta
 
 | File | Purpose |
 | --- | --- |
-| `linden-lane-journey.html` | The whole site: HTML, CSS, and JavaScript in one file |
+| `index.html` | The whole site: HTML, CSS, and JavaScript in one file |
 | `README.md` | This guide |
 
 ## Run it
 
-Open `linden-lane-journey.html` in any modern browser. To publish it, upload the file to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, or plain web hosting). If you add photos or videos, upload them next to the HTML file and keep the relative paths.
+Open `index.html` in any modern browser. To publish it, upload the file to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, or plain web hosting). If you add photos or videos, upload them next to the HTML file and keep the relative paths.
 
 ## Page structure
 
