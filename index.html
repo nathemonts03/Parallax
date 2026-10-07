@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Linden Lane Weddings | Planning, Photo and Film</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Figtree:wght@300;400;500&display=swap"
+            rel="stylesheet">
+        <style>
+:root{--bg:#F7F4F1;--ink:#222925;--mute:#66706a;--rose:#D8A39D;--gold:#B8935A;--line:rgba(34,41,37,.16);
+--serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141916;--ink:#ECE6DF;--mute:#a1a89f;--line:rgba(236,230,223,.18)}}
+:root[data-theme="dark"]{--bg:#141916;--ink:#ECE6DF;--mute:#a1a89f;--line:rgba(236,230,223,.18)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1.0625rem/1.7 var(--sans);overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.08;margin:0}
+h2{font-size:clamp(2rem,4.6vw,3.6rem)}
+p{margin:0;max-width:54ch}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn{display:inline-block;border:1px solid currentColor;padding:.8rem 1.7rem;border-radius:999px;text-decoration:none;font:400 .95rem var(--sans);background:none;color:inherit;cursor:pointer;transition:background .5s,color .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.btn:hover{background:var(--rose);border-color:var(--rose);color:#1c2420;transform:translateY(-2px)}
+
+nav{position:fixed;inset:env(safe-area-inset-top,0px) 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1.25rem,5vw,3.5rem);color:#fff;transition:background .6s,color .6s}
+nav.s{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--ink)}
+.logo{font:italic 300 1.6rem var(--serif);text-decoration:none}
+
+/* journey: pinned scene, the couple stays put and the world moves */
+.journey{height:520vh;position:relative}
+.stage{position:sticky;top:0;height:100svh;overflow:hidden;background:linear-gradient(180deg,var(--s1),var(--s2) 64%,var(--s3))}
+.ly{position:absolute;left:0;bottom:0;height:100%;will-change:transform}
+.stars{position:absolute;left:0;top:0;width:2px;height:2px;border-radius:50%;opacity:var(--st);color:#fff}
+.sun,.moon{position:absolute;border-radius:50%;width:26vmin;height:26vmin;margin:-13vmin}
+.sun{background:radial-gradient(circle,var(--o) 24%,transparent 68%)}
+.moon{width:12vmin;height:12vmin;margin:-6vmin;background:radial-gradient(circle at 38% 38%,#fff,#cfd8ff 55%,#9aa6d8);box-shadow:0 0 60px 10px rgba(180,195,255,.35)}
+.hl{position:absolute;bottom:-12vh;border-radius:50% 50% 0 0/100% 100% 0 0;background:var(--f)}
+.tr{position:absolute;bottom:13vh;width:max(.6vw,3px);background:var(--m)}
+.tr u{position:absolute;left:50%;bottom:100%;width:max(6vw,38px);height:max(6vw,38px);border-radius:50%;background:var(--m);transform:translate(-50%,45%)}
+.ar{position:absolute;bottom:13vh;width:20vw;min-width:150px;height:46vh;border:max(.9vw,6px) dotted #e4a8a1;border-bottom:0;border-radius:999px 999px 0 0}
+.bu{position:absolute;width:7px;height:7px;margin:-3px;border-radius:50%;background:#ffd89a;box-shadow:0 0 12px 4px rgba(255,200,130,.7);opacity:var(--l)}
+.ground{position:absolute;left:0;right:0;bottom:0;height:15vh;background:var(--g)}
+.fl{position:absolute;border-radius:50%}
+.couple{position:absolute;left:50%;bottom:11vh;height:48vh;transform:translateX(-50%);filter:drop-shadow(0 0 calc(var(--l)*14px) rgba(255,214,160,var(--l)))}
+.couple svg{height:100%;fill:var(--u);stroke:var(--u);animation:walk 1.3s ease-in-out infinite alternate}
+.shadow{position:absolute;left:50%;bottom:-1.2vh;width:20vh;height:2.4vh;margin-left:-10vh;border-radius:50%;background:rgba(0,0,0,.28);filter:blur(6px)}
+@keyframes walk{to{transform:translateY(-5px) rotate(.6deg)}}
+.ch{position:absolute;left:0;right:0;top:14vh;text-align:center;color:#fff;padding:0 1.5rem;opacity:0;transform:translateY(26px);pointer-events:none;transition:opacity 1s,transform 1.3s cubic-bezier(.16,1,.3,1);text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.ch.on{opacity:1;transform:none;pointer-events:auto}
+.ch h1{font-size:clamp(2.2rem,6.4vw,5.4rem);letter-spacing:-.015em}
+.ch p{margin:1rem auto 1.6rem}
+.dots{position:absolute;right:1.4rem;top:50%;transform:translateY(-50%);display:grid;gap:.9rem}
+.dots button{width:10px;height:10px;border-radius:50%;border:1px solid #fff;background:none;padding:0;cursor:pointer;transition:background .5s,transform .5s}
+.dots button.on{background:#fff;transform:scale(1.4)}
+.hint{position:absolute;left:50%;bottom:3vh;transform:translateX(-50%);color:#fff;font-size:.9rem;transition:opacity .6s}
+
+/* content */
+section.c{padding:clamp(4.5rem,11vw,8rem) clamp(1.25rem,6vw,5rem)}
+.wrap{max-width:1180px;margin:0 auto}
+.head{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;flex-wrap:wrap;margin-bottom:3rem}
+.head p{color:var(--mute)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.8rem,2vw,1.5rem)}
+.tile{position:relative;aspect-ratio:3/4;border-radius:180px 180px 6px 6px;overflow:hidden;background-size:100% 140%;background-position:50% 50%;clip-path:inset(10% 6% 0 6% round 180px 180px 6px 6px);opacity:0;transition:clip-path 1.5s cubic-bezier(.16,1,.3,1),opacity 1s}
+.tile.in{clip-path:inset(0 round 180px 180px 6px 6px);opacity:1}
+.tile:nth-child(even){margin-top:3rem;border-radius:6px 6px 180px 180px}
+.tile span{position:absolute;left:0;right:0;bottom:0;padding:1.3rem;color:#fff;font:italic 1.3rem var(--serif);background:linear-gradient(transparent,rgba(0,0,0,.4))}
+.film{background:#1c2420;color:#ECE6DF}
+.film .head p{color:#a1a89f}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.vid{position:relative;aspect-ratio:4/5;border:0;border-radius:6px;overflow:hidden;color:#fff;text-align:left;cursor:pointer;padding:0;background-size:100% 100%}
+.vid .m{position:absolute;left:1.2rem;right:1.2rem;bottom:1.1rem}
+.vid h3{font-size:1.8rem}.vid small{opacity:.8}
+.play{position:absolute;top:50%;left:50%;width:70px;height:70px;margin:-35px;border-radius:50%;border:1px solid #fff;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);display:grid;place-items:center;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.play::after{content:"";border-left:15px solid #fff;border-block:9px solid transparent;margin-left:4px}
+.vid:hover .play{transform:scale(1.15)}
+.sde{background:#2b1f26;color:#f6ece6;text-align:center}
+.sde h2{max-width:17ch;margin:0 auto 1.2rem}
+.sde p{margin:0 auto 3.5rem;color:#d9c6c0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;text-align:left;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:.5rem;height:1px;background:rgba(246,236,230,.3)}
+.steps div{position:relative;padding-top:2rem}
+.steps div::before{content:"";position:absolute;top:0;left:0;width:12px;height:12px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 6px rgba(216,163,157,.2)}
+.steps b{display:block;font:italic 300 1.9rem var(--serif)}.steps span{font-size:.95rem;color:#d9c6c0}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem)}
+form{display:grid;gap:1.3rem}
+label{display:grid;gap:.3rem;font-size:.9rem;color:var(--mute)}
+input,textarea{font:inherit;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--line);padding:.6rem 0;border-radius:0;transition:border-color .4s}
+input:focus,textarea:focus{outline:0;border-color:var(--gold)}
+footer{padding:2.2rem clamp(1.25rem,6vw,5rem);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:var(--mute);font-size:.9rem}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,980px);width:100%;color:#fff}
+dialog::backdrop{background:rgba(10,14,12,.86);backdrop-filter:blur(8px)}
+dialog[open]{animation:pop .7s cubic-bezier(.16,1,.3,1)}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+#stg{aspect-ratio:16/9;border-radius:6px;background:#000;display:grid;place-items:center;text-align:center;padding:1.5rem;overflow:hidden}
+#stg video{width:100%;height:100%}
+#x{position:absolute;top:-2.5rem;right:0;background:none;border:0;color:#fff;font:400 1rem var(--sans);cursor:pointer}
+@media(max-width:820px){.tiles,.vids{grid-template-columns:1fr 1fr}.vid{aspect-ratio:3/4}.steps{grid-template-columns:1fr 1fr}.steps::before{display:none}.ct{grid-template-columns:1fr}.tile:nth-child(even){margin-top:0}.dots{right:.7rem}}
+@media(max-width:520px){.tiles,.vids{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.tile{opacity:1;clip-path:none}}
+</style>
+    </head>
+    <body>
+        <nav id="nav"><a class="logo" href="#top">Linden Lane</a><a class="btn"
+                href="#contact">Check your date</a></nav>
+
+        <div class="journey" id="top">
+            <div class="stage" id="stage">
+                <div class="stars" id="stars"></div>
+                <div class="sun" id="sun"></div><div class="moon"
+                    id="moon"></div>
+                <div class="ly" data-s=".12" data-k="far"></div>
+                <div class="ly" data-s=".35" data-k="mid"></div>
+                <div class="ground"></div>
+                <div class="ly" data-s=".7" data-k="arch"></div>
+                <div class="couple"
+                    aria-label="A bride and groom walking hand in hand">
+                    <div class="shadow"></div>
+                    <svg viewBox="0 0 200 330" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="62" cy="56" r="17" stroke="none" />
+                        <path stroke="none"
+                            d="M38 96Q40 78 62 78Q84 78 86 96L90 190L80 192L78 322L66 322L62 214L58 322L46 322L44 192L34 190Z" />
+                        <path stroke="none"
+                            d="M124 56Q96 66 90 160Q116 124 130 78Z"
+                            opacity=".7" />
+                        <circle cx="136" cy="62" r="15" stroke="none" />
+                        <path stroke="none"
+                            d="M126 80Q146 80 150 98L154 150Q186 230 198 322L90 322Q114 230 124 150L124 98Z" />
+                        <path fill="none" stroke-width="8"
+                            d="M82 104L96 178L122 170" />
+                    </svg>
+                </div>
+                <div class="ly" data-s="1.25" data-k="fore"></div>
+
+                <div class="ch"><h1>We plan every detail.</h1><p>Venues,
+                        vendors, and timelines handled well before the day, so
+                        you can enjoy it.</p><a class="btn"
+                        href="#contact">Check your date</a></div>
+                <div class="ch"><h1>We photograph the quiet
+                        moments.</h1><p>Natural, golden-hour photography that
+                        looks like you and feels like that day.</p><a
+                        class="btn" href="#photo">See the photos</a></div>
+                <div class="ch"><h1>We film the whole story.</h1><p>Cinematic
+                        wedding films with real vows, real laughter, and real
+                        sound.</p><a class="btn" href="#film">Watch the
+                        films</a></div>
+                <div class="ch"><h1>And play it back tonight.</h1><p>Our
+                        same-day edit is cut while you celebrate and screened at
+                        your reception.</p><a class="btn" href="#sde">How the
+                        same-day edit works</a></div>
+                <div class="dots" id="dots"><button
+                        aria-label="Planning"></button><button
+                        aria-label="Photography"></button><button
+                        aria-label="Film"></button><button
+                        aria-label="Same-day edit"></button></div>
+                <div class="hint" id="hint">Scroll to walk with us</div>
+            </div>
+        </div>
+
+        <section class="c" id="photo">
+            <div class="wrap">
+                <div class="head"><h2>Photography</h2><p>Soft light, real
+                        moments, from the first look to the last
+                        dance.</p></div>
+                <div class="tiles">
+                    <div class="tile rv"
+                        style="background-image:linear-gradient(160deg,#e9c4b5,#a9857e 60%,#4a5a4f)"><span>Garden
+                            vows</span></div>
+                    <div class="tile rv"
+                        style="background-image:linear-gradient(200deg,#cfd8c9,#8F9F8A 55%,#2c3a32)"><span>First
+                            look</span></div>
+                    <div class="tile rv"
+                        style="background-image:linear-gradient(170deg,#f1dfd2,#D8A39D 50%,#7a5a58)"><span>Bridal
+                            details</span></div>
+                    <div class="tile rv"
+                        style="background-image:linear-gradient(140deg,#d9c7a4,#B8935A 60%,#3b3023)"><span>Golden
+                            hour</span></div>
+                    <div class="tile rv"
+                        style="background-image:linear-gradient(190deg,#e6d9e0,#a58fa0 55%,#3a2f3b)"><span>The
+                            toast</span></div>
+                    <div class="tile rv"
+                        style="background-image:linear-gradient(150deg,#f3e6d6,#c9a58a 50%,#4a3a30)"><span>Last
+                            dance</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="c film" id="film">
+            <div class="wrap">
+                <div class="head"><h2>Wedding films</h2><p>Highlight reels and
+                        full ceremonies, edited with natural sound.</p></div>
+                <div class="vids">
+                    <button class="vid" data-video
+                        data-title="Isabel and Marco: highlight film"
+                        style="background-image:linear-gradient(150deg,#c68f88,#4a5a4f 70%,#1c2420)"><div
+                            class="play"></div><div class="m"><h3>Isabel and
+                                Marco</h3><small>Highlight film, 4
+                                min</small></div></button>
+                    <button class="vid" data-video data-title="Ceremony in full"
+                        style="background-image:linear-gradient(200deg,#d9c7a4,#8a6c3f 70%,#2b2218)"><div
+                            class="play"></div><div class="m"><h3>Ceremony in
+                                full</h3><small>Vows and music, 18
+                                min</small></div></button>
+                    <button class="vid" data-video
+                        data-title="Behind the planning"
+                        style="background-image:linear-gradient(160deg,#a58fa0,#3a2f3b 80%)"><div
+                            class="play"></div><div class="m"><h3>Behind the
+                                planning</h3><small>How we run your day, 2
+                                min</small></div></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="c sde" id="sde">
+            <div class="wrap">
+                <h2>Watch your wedding film before the night ends.</h2>
+                <p>A same-day edit is a 3-minute film cut on site while you
+                    celebrate, then played on the screen at your reception.</p>
+                <div class="steps">
+                    <div><b>2:00 pm</b><span>Ceremony is filmed</span></div>
+                    <div><b>3:30 pm</b><span>Editor starts cutting on
+                            site</span></div>
+                    <div><b>6:00 pm</b><span>Colour, music, and sound
+                            finished</span></div>
+                    <div><b>8:30 pm</b><span>Film plays at your
+                            reception</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="c" id="contact">
+            <div class="wrap ct">
+                <div><h2>Tell us about your day.</h2><p
+                        style="margin-top:1.2rem;color:var(--mute)">Share your
+                        date and venue. We reply within two working days with
+                        availability and packages.</p></div>
+                <form id="f">
+                    <label>Your names<input name="n" required
+                            autocomplete="name"></label>
+                    <label>Wedding date<input name="d" type="date"></label>
+                    <label>Venue or city<input name="v"></label>
+                    <label>Anything we should know<textarea name="m"
+                            rows="3"></textarea></label>
+                    <div><button class="btn" type="submit">Send
+                            inquiry</button></div>
+                    <div id="ok" role="status" style="min-height:1.5em"></div>
+                </form>
+            </div>
+        </section>
+        <footer><span>Linden Lane
+                Weddings</span><span>hello@lindenlane.example</span></footer>
+
+        <dialog id="dlg"><button id="x">Close</button><div
+                id="stg"></div></dialog>
+
+        <script>
+(function(){
+var $=function(s){return document.querySelector(s)},rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function hx(h){var n=parseInt(h.slice(1),16);return[n>>16,n>>8&255,n&255]}
+function mx(a,b,t){a=hx(a);b=hx(b);return'rgb('+a.map(function(v,i){return Math.round(v+(b[i]-v)*t)}).join()+')'}
+var N=['--s1','--s2','--s3','--f','--m','--g','--u','--o'];
+/* [progress, colours, string-light level, star level]: dawn, golden hour, dusk, night */
+var K=[[0,['#7f94ab','#e5b7b0','#f6dfc8','#a9b8b6','#7a9486','#5a7a63','#2a2430','#fff1d6'],0,0],
+[.34,['#5b7a8f','#eaa874','#f7d79c','#b59f8a','#6f8566','#506f4c','#241f26','#ffe0a8'],0,0],
+[.67,['#2d3150','#8a4a6b','#e0906c','#5d4a5f','#3d4a46','#2f4a3c','#14111a','#ffb27a'],.35,.15],
+[1,['#0d1120','#1b2040','#3b3057','#1a2038','#10191f','#0b1410','#08070c','#cfd8ff'],1,1]];
+var st=$('#stage'),jr=$('.journey'),L=[].slice.call(document.querySelectorAll('.ly')),ch=[].slice.call(document.querySelectorAll('.ch')),
+dots=[].slice.call(document.querySelectorAll('#dots button')),sun=$('#sun'),moon=$('#moon'),nav=$('#nav'),hint=$('#hint');
+var vw,vh,T,P=0,tiles=[].slice.call(document.querySelectorAll('.tile'));
+var sh=[];for(var i=0;i<70;i++)sh.push(((i*53)%100)+'vw '+((i*29)%58)+'vh 0 '+((i%5)?'rgba(255,255,255,.8)':'#fff'));
+$('#stars').style.boxShadow=sh.join(',');
+
+function fill(l,W){var k=l.dataset.k,o='',Wv=W/vw*100,i,x;
+ if(k=='far')for(i=0,x=-10;x<Wv;i++,x+=36)o+='<i class="hl" style="left:'+x+'vw;width:'+(50+(i*17)%24)+'vw;height:'+(26+(i*13)%16)+'vh"></i>';
+ if(k=='mid')for(i=0,x=2;x<Wv;i++,x+=8)o+='<b class="tr" style="left:'+x+'vw;height:'+(8+(i*7)%9)+'vh"><u></u></b>';
+ if(k=='arch')[40,145,250].forEach(function(a){o+='<i class="ar" style="left:'+a+'vw"></i>';for(var j=0;j<=16;j++){var g=Math.PI*j/16;o+='<i class="bu" style="left:calc('+a+'vw + '+(10-10*Math.cos(g)).toFixed(2)+'vw);bottom:calc(13vh + 46vh - '+(10*Math.sin(g)).toFixed(2)+'vw)"></i>'}});
+ if(k=='fore'){var c=['#e8b0aa','#f3dcc9','#c9a76a','#b6c4a8'];for(i=0,x=0;x<Wv;i++,x+=3.2)o+='<i class="fl" style="left:'+x+'vw;bottom:'+(((i*37)%7)-1)+'vh;width:'+(10+(i*11)%14)+'px;height:'+(10+(i*11)%14)+'px;background:'+c[i%4]+'"></i>';}
+ l.innerHTML=o}
+function build(){vw=innerWidth;vh=innerHeight;T=vw*3;L.forEach(function(l){var s=+l.dataset.s,W=vw+T*s;l.style.width=W+'px';fill(l,W)})}
+function paint(p){
+ var i=0;while(i<K.length-2&&p>K[i+1][0])i++;
+ var a=K[i],b=K[i+1],t=Math.min(Math.max((p-a[0])/(b[0]-a[0]),0),1);t=t*t*(3-2*t);
+ N.forEach(function(n,j){st.style.setProperty(n,mx(a[1][j],b[1][j],t))});
+ st.style.setProperty('--l',(a[2]+(b[2]-a[2])*t).toFixed(3));st.style.setProperty('--st',(a[3]+(b[3]-a[3])*t).toFixed(3));
+ var sp=Math.min(p/.78,1);
+ sun.style.left=(14+62*sp)+'%';sun.style.top=(60-44*Math.sin(Math.PI*sp))+'%';sun.style.opacity=Math.max(0,1-Math.max(0,(p-.6)/.2));
+ moon.style.left='74%';moon.style.top=(34-10*p)+'%';moon.style.opacity=Math.min(Math.max((p-.68)/.22,0),1);
+ L.forEach(function(l){l.style.transform='translate3d('+(-p*T*l.dataset.s).toFixed(1)+'px,0,0)'});
+ var c=Math.min(3,Math.floor(p*4));ch.forEach(function(e,j){e.classList.toggle('on',j==c)});dots.forEach(function(e,j){e.classList.toggle('on',j==c)});
+ hint.style.opacity=p<.02?1:0}
+function frame(){
+ var r=jr.getBoundingClientRect(),p=Math.min(Math.max(-r.top/(r.height-vh),0),1);
+ P=rm?p:P+(p-P)*.08;if(Math.abs(p-P)<.0004)P=p;
+ paint(P);nav.classList.toggle('s',r.bottom<vh*.4);
+ tiles.forEach(function(t){var q=t.getBoundingClientRect();t.style.backgroundPosition='50% calc(50% + '+(-(q.top+q.height/2-vh/2)*.14).toFixed(1)+'px)'});
+ requestAnimationFrame(frame)}
+build();addEventListener('resize',build);frame();
+dots.forEach(function(d,i){d.onclick=function(){scrollTo({top:jr.offsetTop+(i+.5)/4*(jr.offsetHeight-vh),behavior:rm?'auto':'smooth'})}});
+document.documentElement.style.scrollBehavior=rm?'auto':'smooth';
+
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+tiles.forEach(function(t){io.observe(t)});
+
+var dlg=$('#dlg'),stg=$('#stg');
+function shut(){var v=stg.querySelector('video');if(v)v.pause();dlg.close();stg.innerHTML=''}
+$('#x').onclick=shut;dlg.addEventListener('click',function(e){if(e.target===dlg)shut()});
+document.querySelectorAll('[data-video]').forEach(function(b){b.addEventListener('click',function(){
+ var s=b.dataset.video;
+ stg.innerHTML=s?'<video controls autoplay src="'+s+'"></video>':'<p style="max-width:40ch;line-height:1.6"><span style="font:italic 2rem Georgia,serif;display:block;margin-bottom:.6rem">'+(b.dataset.title||'')+'</span>Add your video file path to this button\'s <code>data-video</code> attribute (for example <code>films/highlight.mp4</code>) and it will play here.</p>';
+ dlg.showModal()})});
+$('#f').addEventListener('submit',function(e){e.preventDefault();var f=e.target;
+ $('#ok').textContent='Thank you. Your email app will open so you can send the inquiry.';
+ location.href='mailto:hello@lindenlane.example?subject='+encodeURIComponent('Wedding inquiry')+'&body='+encodeURIComponent('Names: '+f.n.value+'\nDate: '+f.d.value+'\nVenue: '+f.v.value+'\n\n'+f.m.value)});
+})();
+</script>
+    </body>
+</html>
